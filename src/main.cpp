@@ -98,6 +98,15 @@ int main() {
           * Both are in between [-1, 1].
           *
           */
+          for (int i = 0; i < ptsx.size(); i++)
+          {
+            double shift_x = ptsx[i] - px;
+            double shfit_y = ptsy[i] - py;
+
+            ptsx[i] = (shift_x * cos(0 - psi) - shift_y * sin(0 - psi));
+            ptsy[i] = (shift_y * sin(0 - psi) + shift_y * cos(0 - psi));
+          }
+
           double steer_value;
           double throttle_value;
 
